@@ -1,0 +1,27 @@
+page-home {	  
+	
+	.hidden{
+		display : none;
+	}
+		
+	.logPage{
+		height : 100%;
+		width : 100%;	
+		display : table;
+		background:#103;
+	}	
+	
+	.logContent{
+		height : 100%;
+		display : table-cell;
+		vertical-align : middle;
+	}
+	
+	img{
+		background:#103;
+	}
+	
+	.message{
+		color:#fff;
+	}	
+}

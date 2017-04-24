@@ -1,0 +1,39 @@
+<ion-header class='hidden'>
+	<ion-navbar>
+		<ion-title text-center>
+			Consumapp
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+
+	<div class='logPage'>
+		<div class='logContent'>
+			<ion-img src="../assets/img/main.png" margin-bottom></ion-img>
+
+			<form (ngSubmit)="tryLog()">
+				<ion-item>
+					<ion-label>Username</ion-label>
+					<ion-input type="text" [(ngModel)]="logForm.username" name="username"></ion-input>
+				</ion-item>	
+				<ion-item>
+					<ion-label>Password</ion-label>
+					<ion-input type="password" [(ngModel)]="logForm.password" name="password"></ion-input>
+				</ion-item>	
+				<button ion-button margin-top type="submit" block color="Danger">Log in</button>
+			</form>
+
+			<p style="text-align:center;">
+				<button ion-button type="submit" clear (click)="goToGetAccount()">Get account</button>		
+			</p>
+	
+			<p class='message'>
+				{{registerResult}}
+			</p>
+		</div>
+	</div>
+	
+</ion-content>
+
+

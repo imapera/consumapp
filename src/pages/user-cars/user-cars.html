@@ -1,0 +1,23 @@
+<ion-header>
+
+  	<ion-navbar>
+    	<ion-title>Hi {{username}}!</ion-title>
+			<ion-buttons end>
+				<button ion-button icon-only (click)="addCar()">
+					<ion-icon name="add"></ion-icon>
+				</button>
+			</ion-buttons>
+  	</ion-navbar>
+
+</ion-header>
+<ion-content padding>
+	
+	<h5>Your cars:</h5>
+	
+	<ion-list>
+		<ion-item *ngFor="let car of cars | async" (click)="selectCar(car.$key)">
+			{{car.brand}} {{car.model}} {{car.version}}
+		</ion-item>
+	</ion-list>
+	
+</ion-content>

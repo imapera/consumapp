@@ -1,0 +1,66 @@
+<!--
+  Generated template for the Consumption page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+	<ion-grid text-center>
+		<ion-row>
+			<ion-col>
+				Consumption from <b>{{date}}</b>
+				<hr>
+			</ion-col>
+		</ion-row>	
+		<ion-row>
+			<ion-col>
+				Consumption
+			</ion-col>
+			<ion-col>
+				Price
+			</ion-col>
+		</ion-row>	
+		<ion-row>
+			<ion-col>
+				{{ (consumptionObject | async)?.consumption }}l/100km
+			</ion-col>
+			<ion-col>
+				{{ (consumptionObject | async)?.price }}€/l
+			</ion-col>
+		</ion-row>	
+	</ion-grid>
+	
+	<form (ngSubmit)="saveChanges()">
+		<ion-item >
+			<ion-label>Litres</ion-label>
+			<ion-input type="text" [(ngModel)]="consumptionForm.litres" name="litres"></ion-input>
+		</ion-item>	
+		<ion-item >
+			<ion-label>Kilometres</ion-label>
+			<ion-input type="text" [(ngModel)]="consumptionForm.kilometres" name="kilometres"></ion-input>
+		</ion-item>	
+		<ion-item>
+			<ion-label>Euros</ion-label>
+			<ion-input type="text" [(ngModel)]="consumptionForm.euros" name="euros"></ion-input>
+		</ion-item>
+		<button ion-button type="submit" block color="Danger">Save changes</button>
+	</form>
+	
+	<ion-grid text-center>
+		<ion-row>
+			<ion-col>
+				<button ion-button icon-only (click)="removeConsumption()">
+					<ion-icon name="trash"></ion-icon>
+				</button>			
+			</ion-col>
+		</ion-row>	
+	</ion-grid>
+</ion-content>

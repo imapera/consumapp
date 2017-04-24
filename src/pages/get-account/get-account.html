@@ -1,0 +1,31 @@
+<ion-header>
+  	<ion-navbar>
+    	<ion-title>Get a new account</ion-title>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<div class='logPage'>
+		<div class='logContent'>
+			<form (ngSubmit)="tryRegister()">		
+				<ion-item margin-bottom>
+					<ion-label>Username</ion-label>
+					<ion-input type="text" [(ngModel)]="regForm.username" name="username"></ion-input>
+				</ion-item>	
+				<ion-item margin-bottom>
+					<ion-label>Password</ion-label>
+					<ion-input type="password" [(ngModel)]="regForm.pass1" name="pass1"></ion-input>
+				</ion-item>	
+				<ion-item margin-bottom>
+					<ion-label>Repeat password</ion-label>
+					<ion-input type="password" [(ngModel)]="regForm.pass2" name="pass2"></ion-input>
+				</ion-item>	
+				<ion-item margin-bottom>
+					<ion-label>Email</ion-label>
+					<ion-input type="text" [(ngModel)]="regForm.email" name="email"></ion-input>
+				</ion-item>
+				<button ion-button type="submit" block color="Danger">Create account</button>
+			</form>
+		</div>
+	</div>
+</ion-content>
